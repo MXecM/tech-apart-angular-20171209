@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 
   createForm() {
     this.tripForm = this.fb.group({
-    name: new FormControl('', Validators.required),
+    name: new FormControl('', [Validators.required, Validators.minLength(10)]),
     price: new FormControl(0, Validators.required),
     duration: new FormControl ('', Validators.required),
     description: new FormControl ('', Validators.required),

@@ -46,6 +46,12 @@
       <small id="TripNameHelpBlock" class="form-text text-muted">
         It is best to limit the trip name to about 25 to 30 charatcters.
       </small>
+
+      <!-- {{tripForm.get('name').errors | json}} -->
+
+      <div *ngIf="tripForm.get('name').errors && tripForm.get('name').errors['minlength']">
+        Min length should be 10 characters.
+      </div>
     </div>
     <div class="form-group col-md-6">
       <label class="col-form-label" for="formGroupTripCost" >Cost</label>
@@ -58,7 +64,7 @@
 
     <div class="form-group col-md-12">
       <label class="col-form-label" for="formGroupDuration">Duration</label>
-      <input type="text" class="form-control" id="formGroupDuration" placeholder="Eg. 12 months" formControlName="duration" >
+      <input type="text" class="foValidators.requiredrm-control" id="formGroupDuration" placeholder="Eg. 12 months" formControlName="duration" >
     </div>
 
     <div class="form-group col-md-12">
@@ -73,7 +79,7 @@
       </small>
     </div>
     <div class="form-actions">
-      <button class="btn submit-btn" type="button" (click)="formSubmitted()" >SUBMIT</button>
+      <button class="btn submit-btn" type="button" (click)="formSubmitted()" [disabled]="tripForm.invalid">SUBMIT</button>
     </div>
   </form>
 </div>
