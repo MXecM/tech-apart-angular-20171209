@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+// import { TripsListComponent } from './components/trips-list';
 
 
 @NgModule({
@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    ReactiveFormsModule,
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
